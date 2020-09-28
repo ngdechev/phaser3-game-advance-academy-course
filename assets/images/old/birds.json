@@ -1,0 +1,52 @@
+{"frames": [
+
+{
+	"filename": "bird1.png",
+	"frame": {"x":840,"y":542,"w":900,"h":675},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":900,"h":675},
+	"sourceSize": {"w":900,"h":675}
+},
+{
+	"filename": "bird2.jpg",
+	"frame": {"x":310,"y":0,"w":728,"h":542},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":728,"h":542},
+	"sourceSize": {"w":728,"h":542}
+},
+{
+	"filename": "bird3.jpg",
+	"frame": {"x":0,"y":0,"w":310,"h":310},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":310,"h":310},
+	"sourceSize": {"w":310,"h":310}
+},
+{
+	"filename": "bird4.jpg",
+	"frame": {"x":1038,"y":0,"w":728,"h":512},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":728,"h":512},
+	"sourceSize": {"w":728,"h":512}
+},
+{
+	"filename": "bird5.jpg",
+	"frame": {"x":0,"y":542,"w":840,"h":430},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":840,"h":430},
+	"sourceSize": {"w":840,"h":430}
+}],
+"meta": {
+	"app": "https://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "birds.png",
+	"format": "RGBA8888",
+	"size": {"w":1766,"h":1217},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:051d5d391fda27e495ff09bb6dd5685c:f878bde764ab15fb18da0c7b16380612:05064d7bb83a0e2b52752dd6e3168bce$"
+}
+}
