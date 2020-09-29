@@ -1,10 +1,10 @@
 import { GameApp } from "../GameApp";
-import { BackgroundGraphic } from "../graphics/BackgroundGraphics";
-import { BirdGraphics } from "../graphics/BirdGraphics";
+import { BackgroundGraphic } from "../graphics/BackgroundGraphic";
+import { BirdGraphic } from "../graphics/BirdGraphic";
 
 class Main extends Phaser.Scene {
     private background: BackgroundGraphic;
-    private birds: BirdGraphics;
+    private bird: BirdGraphic;
 
     constructor() {
         super("main");
@@ -14,13 +14,15 @@ class Main extends Phaser.Scene {
         this.background = new BackgroundGraphic(this);
         this.add.existing(this.background);
 
-        this.birds = new BirdGraphics(this);
-        this.add.existing(this.birds);
+        this.bird = new BirdGraphic(this);
+        this.add.existing(this.bird);
+
+        let targetCursor: Phaser.Input.InputPlugin = this.input.setDefaultCursor('url(assets/images/target-cursor.cur), pointer');
     }
 
     update() {
         this.background.update();
-        this.birds.update();
+        this.bird.update();
     }
 }
 

@@ -7,11 +7,7 @@ class Preload extends Phaser.Scene {
     }
 
     create() {
-        // this.load.image("bird", "assets/images/bird.png");
-        // this.load.atlas("bird", "assets/images/birds.png", "assets/images/birds.json");
-        // this.load.spritesheet("bird", "assets/images/birds-sprite-sheet.png", 75, 75);
-        // this.load.image("bird", "assets/images/bird.png");
-        this.load.atlas("birds", "assets/images/birds.png", "assets/images/birds.json");
+        this.load.atlas("bird", "assets/images/birds.png", "assets/images/birds.json");
         this.load.image("background", "assets/images/background.webp");
 
         this.load.on("progress", this.onProgressUpdated, this);
