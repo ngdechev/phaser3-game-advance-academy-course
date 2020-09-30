@@ -11,13 +11,19 @@ class Main extends Phaser.Scene {
     }
 
     create() {
+        // let hitSound = this.sound.add("hit");
+        // this.sound.play("bg-music", {volume: 0.05});
+        this.cameras.main.fadeIn(2000);
+
         this.background = new BackgroundGraphic(this);
         this.add.existing(this.background);
 
         this.bird = new BirdGraphic(this);
         this.add.existing(this.bird);
 
-        let targetCursor: Phaser.Input.InputPlugin = this.input.setDefaultCursor('url(assets/images/target-cursor.cur), pointer');
+
+        this.input.setDefaultCursor('url(assets/images/target-cursor.cur), pointer');
+        this.add.text(16, 16, `Score: ${this.bird.score}`, { fontSize: '32px', fill: '#fff' });
     }
 
     update() {

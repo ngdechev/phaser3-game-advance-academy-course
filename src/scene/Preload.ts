@@ -10,6 +10,14 @@ class Preload extends Phaser.Scene {
         this.load.atlas("bird", "assets/images/birds.png", "assets/images/birds.json");
         this.load.image("background", "assets/images/background.webp");
 
+        this.load.image("playBtn", "assets/images/buttons/play_btn.png");
+        this.load.image("quitBtn", "assets/images/buttons/quit_btn.png");
+        this.load.image("playBtnHover", "assets/images/buttons/play_btn_hover.png");
+        this.load.image("quitBtnHover", "assets/images/buttons/quit_btn_hover.png");
+
+        this.load.audio("hit", "assets/audio/hit.wav");
+        this.load.audio("bg-music", "assets/audio/bg-music.mp3")
+
         this.load.on("progress", this.onProgressUpdated, this);
         this.load.on("load", this.onFileLoaded, this);
         this.load.on("complete", this.onComplete, this);
@@ -36,7 +44,7 @@ class Preload extends Phaser.Scene {
     private onComplete(): void {
         console.log("load complete");
 
-        this.scene.start("main");
+        this.scene.start("mainMenu");
     }
 }
 
