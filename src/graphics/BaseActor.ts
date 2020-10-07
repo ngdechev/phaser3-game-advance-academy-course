@@ -1,8 +1,9 @@
-class BirdObject extends Phaser.GameObjects.Sprite {
+class BaseActor extends Phaser.GameObjects.Sprite {
     private moveSpeed: number;
-    private hp: number;
+    private hp?: number;
+    private dmg?: number = 50;
 
-    constructor(scene: Phaser.Scene, x: number, y: number, texture: string, frame: string, hp: number) {
+    constructor(scene: Phaser.Scene, x: number, y: number, texture: string, frame?: string, hp?: number) {
         super(scene, x, y, texture, frame);
 
         this.hp = hp;
@@ -24,6 +25,14 @@ class BirdObject extends Phaser.GameObjects.Sprite {
     public get hitPoints() {
         return this.hp;
     }
+
+    public set damage(val: number) {
+        this.dmg = val;
+    }
+
+    public get damage() {
+        return this.dmg;
+    }
 }
 
-export { BirdObject }
+export { BaseActor }

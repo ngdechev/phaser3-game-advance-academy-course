@@ -8,7 +8,10 @@ class Preload extends Phaser.Scene {
 
     create() {
         this.load.atlas("bird", "assets/images/birds.png", "assets/images/birds.json");
-        this.load.image("background", "assets/images/background.webp");
+        this.load.atlas("explosion", "assets/images/explosion.png", "assets/images/explosion.json");
+        
+        this.load.image("bomb", "assets/images/bomb.webp");
+        this.load.image("background", "assets/images/background.webp"); 
 
         this.load.image("playBtn", "assets/images/buttons/play_btn.png");
         this.load.image("quitBtn", "assets/images/buttons/quit_btn.png");
