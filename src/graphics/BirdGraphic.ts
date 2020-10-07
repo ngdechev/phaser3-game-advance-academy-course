@@ -10,6 +10,8 @@ class BirdGraphic extends Phaser.GameObjects.Container {
     private birdpawnTime: number = 0;
 
     public isAlive: boolean;
+
+    private score: number = 0;
     
     constructor(scene: Phaser.Scene) {
         super(scene);
@@ -40,12 +42,13 @@ class BirdGraphic extends Phaser.GameObjects.Container {
 
     public spawnBird(): void {
         let x: number = -100;
-        let y: number = Math.floor((Math.random() * <number>GameApp.gameConfig.height / 2) + 2);
+        let y: number = Math.floor((Math.random() * <number>GameApp.gameConfig.height / 2) + 200);
+        
         let frames: string[] = ["bird1", "bird2", "bird3"];
         let hp: number[] = [100, 300];
         let framesIndex: number = Math.floor(Math.random() * frames.length);
         let hpIndex: number = Math.floor(Math.random() * hp.length);
-
+        
         let bird: BaseActor = new BaseActor(this.scene, x, y, "bird", frames[framesIndex], hp[hpIndex]).setInteractive();
         bird.movementSpeed = Math.random() * (3.5 - 1.5) + 1.5;
         bird.setScale(0.5);
@@ -58,6 +61,7 @@ class BirdGraphic extends Phaser.GameObjects.Container {
             }        
 
             if(bird.hitPoints <= 0) {
+                this.score += 10;
                 this.isAlive = false;
                 bird.destroy();
             }
@@ -68,6 +72,10 @@ class BirdGraphic extends Phaser.GameObjects.Container {
         });
         
         this.add(bird);
+    }
+
+    public get scoreVal(): string {
+        return this.score.toString();
     }
     
     public update(): void {

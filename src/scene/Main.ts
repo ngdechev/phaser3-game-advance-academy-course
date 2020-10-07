@@ -8,9 +8,7 @@ class Main extends Phaser.Scene {
     private background: BackgroundGraphic;
     private bird: BirdGraphic;
     private bomb: Bomb;
-
-    private score: number = 0;
-    private scoreText: Phaser.GameObjects.Text;
+    private score: Phaser.GameObjects.Text;
 
     constructor() {
         super("main");
@@ -32,19 +30,21 @@ class Main extends Phaser.Scene {
 
 
         if(this.bird.isAlive == false) {
-            this.score += 10;
+            // this.score += 10;
             //hitSound.play();
         }
 
+        
         this.input.setDefaultCursor('url(assets/images/target-cursor.cur), pointer');
-        this.scoreText = this.add.text(16, 16, '', { fontSize: '32px', fill: '#fff' });
-        this.scoreText.setText(`Score: ${this.score}`);
+        this.score = this.add.text(16, 16, "", { fontSize: '32px', fill: '#fff' });
+        this.add.existing(this.score);
     }
 
     update() {
         this.background.update();
         this.bird.update();
         this.bomb.update();
+        this.score.text = `Score: ${this.bird.scoreVal}`;
     }
 }
 
