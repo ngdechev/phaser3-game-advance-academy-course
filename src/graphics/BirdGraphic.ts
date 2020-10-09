@@ -1,3 +1,4 @@
+import { NONE } from "phaser";
 import { GameApp } from "../GameApp";
 import { BaseActor } from "./BaseActor";
 
@@ -15,7 +16,7 @@ class BirdGraphic extends Phaser.GameObjects.Container {
     
     constructor(scene: Phaser.Scene) {
         super(scene);
-        
+
         this.isAlive = false;
         this.startSpawning();
     }
@@ -48,12 +49,15 @@ class BirdGraphic extends Phaser.GameObjects.Container {
         let hp: number[] = [100, 300];
         let framesIndex: number = Math.floor(Math.random() * frames.length);
         let hpIndex: number = Math.floor(Math.random() * hp.length);
-        
+        let hitSound = this.scene.sound.add("hit");
+
         let bird: BaseActor = new BaseActor(this.scene, x, y, "bird", frames[framesIndex], hp[hpIndex]).setInteractive();
+
         bird.movementSpeed = Math.random() * (3.5 - 1.5) + 1.5;
         bird.setScale(0.5);
         bird.on("pointerdown", () => {
             bird.setTint(0xff0000);
+            hitSound.play();
 
             if(bird.hitPoints > 0) {
                 this.isAlive = true;
@@ -63,6 +67,7 @@ class BirdGraphic extends Phaser.GameObjects.Container {
             if(bird.hitPoints <= 0) {
                 this.score += 10;
                 this.isAlive = false;
+
                 bird.destroy();
             }
         });

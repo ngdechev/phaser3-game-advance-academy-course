@@ -15,7 +15,8 @@ class Main extends Phaser.Scene {
     }
 
     create() {
-        //let hitSound = this.sound.add("hit");
+        let hitSound = this.sound.add("hit");
+        let explosionSound = this.sound.add("bombExplosion");
         // this.sound.play("bg-music", {volume: 0.05});
         this.cameras.main.fadeIn(2000);
 

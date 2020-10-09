@@ -43,12 +43,14 @@ class Bomb extends Phaser.GameObjects.Container {
     public spawnBomb(): void {
         let x: number = -100;
         let y: number = Math.floor((Math.random() * <number>GameApp.gameConfig.height / 2) + 2);
+        let explosionSound = this.scene.sound.add("bombExplosion");
 
         let bomb: BaseActor = new BaseActor(this.scene, x, y, "bomb", null, 50).setInteractive();
         bomb.movementSpeed = Math.random() * (3.5 - 1.5) + 1.5;
         bomb.setScale(0.5);
         bomb.on('pointerdown', () => {
             bomb.anims.play('bombExplosion');
+            explosionSound.play();
 
             setTimeout(() => {
                 bomb.destroy();
