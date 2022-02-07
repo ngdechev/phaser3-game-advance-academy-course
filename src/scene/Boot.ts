@@ -14,7 +14,7 @@ class Boot extends Phaser.Scene {
         //data transfer example
 
         //uses the registry to set a value for a given key
-        this.registry.set("test", "regustry test - OK");
+        this.registry.set("test", "registry test - OK");
 
         this.scene.start("preload");
     }

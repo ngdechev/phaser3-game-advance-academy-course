@@ -1,0 +1,20 @@
+{"frames": [
+
+{
+	"filename": "special-bird",
+	"frame": {"x":0,"y":0,"w":900,"h":497},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":900,"h":497},
+	"sourceSize": {"w":900,"h":497}
+}],
+"meta": {
+	"app": "https://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "special-bird.png",
+	"format": "RGBA8888",
+	"size": {"w":900,"h":497},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:e3de85be3533b86cfe6ce9a514ff7e4b:ed3a331b0d63a432584c178b66866379:de1ef0aef70ca037645c2e80b8c11b32$"
+}
+}

@@ -2,6 +2,7 @@ import 'phaser';
 import { Boot } from './scene/Boot';
 import { Preload } from './scene/Preload';
 import { Main } from './scene/Main';
+import { MainMenu } from './scene/MainMenu';
 
 class GameApp extends Phaser.Game {
     [x: string]: any;
@@ -14,10 +15,10 @@ class GameApp extends Phaser.Game {
             GameApp.gameConfig = {
                 type: Phaser.AUTO,
                 parent: "content",
-                backgroundColor: '#385e78',
+                backgroundColor: '#fff',
                 width: 1024,
                 height: 512,
-                scene: [Boot, Preload, Main]
+                scene: [Boot, Preload, Main, MainMenu]
             };
         }
 
